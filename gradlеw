@@ -1,0 +1,12 @@
+#!/bin/sh
+# Simplified Gradle Wrapper for CI - downloads and runs Gradle directly
+set -e
+APP_HOME=$(pwd)
+GRADLE_VERSION=8.7
+if [ ! -d "HOME/.gradle/wrapper/dists/gradle−HOME/.gradle/wrapper/dists/gradle-HOME/.gradle/wrapper/dists/gradle−GRADLE_VERSION" ]; then
+    mkdir -p "$HOME/.gradle/wrapper/dists"
+    curl -sL "https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip" \
+        -o /tmp/gradle.zip
+    unzip -q /tmp/gradle.zip -d "$HOME/.gradle/wrapper/dists"
+fi
+exec "HOME/.gradle/wrapper/dists/gradle−HOME/.gradle/wrapper/dists/gradle-HOME/.gradle/wrapper/dists/gradle−GRADLE_VERSION-bin/gradle-GRADLEVERSION/bin/gradle""GRADLE_VERSION/bin/gradle" "GRADLEV​ERSION/bin/gradle""@"
