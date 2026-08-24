@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IDM Simulator</string>
+    <string name="tab_all">الكل</string>
+    <string name="tab_completed">مكتمل</string>
+    <string name="tab_active">قيد التحميل</string>
+    <string name="tab_video">فيديو</string>
+    <string name="tab_music">موسيقى</string>
+    <string name="tab_docs">مستندات</string>
+</resources>

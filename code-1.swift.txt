@@ -1,0 +1,15 @@
+IDM-Simulator/
+├── .github/workflows/build.yml
+├── settings.gradle.kts
+├── build.gradle.kts
+├── gradle.properties
+├── gradle/wrapper/gradle-wrapper.properties
+├── gradlew  ⚠️ (انظر الملاحظة الخاصة أدناه)
+└── app/
+    ├── build.gradle.kts
+    ├── proguard-rules.pro
+    └── src/main/
+        ├── AndroidManifest.xml
+        ├── java/com/idm/simulator/... (كل الأكواد)
+        └── res/values/{strings.xml, themes.xml}
+            res/xml/network_security_config.xml
