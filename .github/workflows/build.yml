@@ -24,8 +24,24 @@ jobs:
         with:
           gradle-version: '8.7'
 
+      - name: List project files (for debugging)
+        run: |
+          echo "=== Root files ==="
+          ls -la
+          echo "=== app folder ==="
+          ls -la app/ || echo "!!! app folder MISSING !!!"
+          echo "=== app/src/main ==="
+          ls -la app/src/main/ || echo "!!! src/main MISSING !!!"
+
       - name: Build Debug APK
         run: gradle assembleDebug --stacktrace --no-daemon
+
+      - name: Print error summary if build failed
+        if: failure()
+        run: |
+          echo "=========== ERROR SUMMARY ==========="
+          gradle assembleDebug --no-daemon 2>&1 | grep -B 2 -A 15 \
+            "What went wrong\|FAILURE\|error:" || echo "No summary found"
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
